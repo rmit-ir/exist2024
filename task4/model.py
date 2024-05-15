@@ -1,4 +1,4 @@
-####NOTE: this work adopted the method proposed in https://github.com/JoeYing1019/MMSD2.0/tree/main/src
+####NOTE: this work adopted and modified the method proposed in https://github.com/JoeYing1019/MMSD2.0/tree/main/src
 from transformers import CLIPModel,BertConfig
 from transformers.models.bert.modeling_bert import BertLayer
 import torch.nn as nn
