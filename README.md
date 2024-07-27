@@ -2,7 +2,8 @@
 
 *Under construction...*
 
-- [task4:](./task4) Code for the multimodal contrastive learning runs for Task 4 (Sexism identification in Memes). 
+- [Tasks 1-3:](./Task1-3) Code for the zero-shot In-Context Learning with off-the-shelf pre-trained Large Language Models
+- [Task 4:](./task4) Code for the multimodal contrastive learning runs for Task 4 (Sexism identification in Memes). 
 
 Code for the RMIT-IR participation at [EXIST Lab at CLEF 2024](http://nlp.uned.es/exist2024/)
 
