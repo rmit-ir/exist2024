@@ -6,13 +6,15 @@ import json
 
 logger = logging.getLogger(__name__)
 #DATA_PATH="../data"
-DATA_PATH="./data"
+#dataset_path = os.getenv('EXIST_DATASET_PATH', 'path_to_your_exist_dataset.csv')
+
+DATA_PATH="./data" #Replace this with the actual dataset path
 class MyDataset(Dataset):
     def __init__(self, mode, limit=None):
         self.data = self.load_data(mode, limit)
         self.image_ids=list(self.data.keys())
         for id in self.data.keys():
-            self.data[id]["image_path"] = os.path.join("../memes",str(id)+".jpeg")
+            self.data[id]["image_path"] = os.path.join("path_to_your_image_folder",str(id)+".jpeg")#os.path.join("../memes",str(id)+".jpeg")
     
     def load_data(self, mode, limit):
         cnt = 0
@@ -28,7 +30,8 @@ class MyDataset(Dataset):
                 sentence = data['text']
                 label = data['label']
  
-                if os.path.isfile(os.path.join("../memes",str(image)+".jpeg")):
+                if os.path.isfile(os.path.join("path_to_your_image_folder",str(image)+".jpeg")):
+                    #os.path.isfile(os.path.join("../memes",str(image)+".jpeg"))
                     data_set[int(image)]={"text":sentence, 'label': label}
                     cnt += 1
                     
@@ -44,7 +47,8 @@ class MyDataset(Dataset):
                     label = data['label']
                 #print("label:", label)
                 
-                if os.path.isfile(os.path.join("../memes",str(image)+".jpeg")):
+                if os.path.isfile(os.path.join("path_to_your_image_folder",str(image)+".jpeg")): #path_to_your_image_folder
+                    #os.path.isfile(os.path.join("../memes",str(image)+".jpeg"))
                     data_set[int(image)]={"text":sentence, 'label': label}
                     cnt += 1
         return data_set
